@@ -12,8 +12,9 @@ import (
 
 // IndexHandler handler that returns HTML from a file.
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-	path := filepath.Join("..", "index.html")
-	http.ServeFile(w, r, path)
+	//path := filepath.Join("index.html")
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	http.ServeFile(w, r, "index.html")
 
 }
 
